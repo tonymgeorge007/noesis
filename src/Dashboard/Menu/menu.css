@@ -12,3 +12,28 @@
     background-color:#3F4E80;
     height: 80px;
 }
+.menu-icon{
+float: left;
+width: 18px;
+height: 18px;
+}
+.menu-list{
+float: left;
+padding-left: 13px;
+font-size: 16px;
+top: -4px;
+position: relative;
+color: white;
+}
+
+.menu-list-style{
+    list-style: none;
+    margin-top: 20px;
+}
+.menu-span{
+    position: relative;
+    left: -15px;
+}
+.menu-items{
+    background-color: #475890;
+}

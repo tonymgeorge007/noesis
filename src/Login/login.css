@@ -1,0 +1,25 @@
+.loginscreen{
+    background-image: url(../Images/map.jpg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: repeat;
+    height: 100vh;
+}
+.loginform{
+    margin: auto;
+    position: relative;
+    top: 40%;
+    width: 400px;
+    background-color: #d7d2cc;
+    border-radius: 15px;
+    height: 150px;
+}
+.floatleft{
+    float: left;
+}
+.paddingtop20{
+    padding-top: 20px;
+}
+.loginbutton{
+    margin: auto;
+}
