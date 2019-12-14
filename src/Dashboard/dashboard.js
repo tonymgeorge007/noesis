@@ -8,10 +8,10 @@ class Dashboard extends Component {
     return (
     <div>
         <div className="row margin_right_0">
-            <div className="col-md-2">
+            <div className="col-md-2 padding_right_0">
               <Menu />
             </div>
-            <div className="col-md-10">
+            <div className="col-md-10 padding_left_0">
               <Dashboardview />
             </div>
 

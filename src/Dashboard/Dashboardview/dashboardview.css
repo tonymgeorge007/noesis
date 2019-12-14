@@ -1,0 +1,32 @@
+.dashboard-middile h3{
+    font-size: 20px;
+    color: #C2C8CA;
+    float: left;
+    padding-top: 28px;
+    font-family: barlow-medium;
+    padding-left: 42px;
+    padding-bottom: 15px;
+}
+.dashboard-header{
+    height: 80px;
+}
+.dashboard-header h3 {
+    font-size: 20px;
+    color: #C2C8CA;
+    float: left;
+    padding-top: 28px;
+    font-family: barlow-medium;
+    padding-left: 42px;
+}
+.dashboard-map{
+    background: url('../../Images/map.jpg');
+    background-position: center;
+    height: 300px;
+}
+.table_width{
+    width: 466px;
+}
+.table_view_position{
+    position: relative;
+    left: 30px;
+}
