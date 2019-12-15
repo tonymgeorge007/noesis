@@ -37,3 +37,9 @@ color: white;
 .menu-items{
     background-color: #475890;
 }
+.menu-bottom{
+    color: white;
+    font-size: 21px;
+    top: 260px;
+    position: relative;
+}

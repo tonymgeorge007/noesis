@@ -32,6 +32,8 @@ class Menu extends Component {
                     
                 </ul>
             </div>
+
+            <h3 className="menu-bottom">NOESIS</h3>
     </div>
     );
   }

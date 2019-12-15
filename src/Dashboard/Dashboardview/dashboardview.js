@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './dashboardview.css';
 import { Table } from 'react-bootstrap';
+import Mydatepicker from './datepicker'
 
 
 class Dashboardview extends Component {
@@ -14,7 +15,9 @@ class Dashboardview extends Component {
               
             </div>
             <div className="dashboard-map"></div>
-            <div className="dashboard-middile">
+            <div className="dashboard-middile row">
+
+              <div className="col-md-5">
             <div className="row">
             <h3>Tabular data</h3>
 </div>
@@ -23,37 +26,41 @@ class Dashboardview extends Component {
   <thead>
     <tr>
       <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>ADDRESS</th>
+      <th>STATUS</th>
+      <th>LEVEL (DB)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>1</td>
       <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Operational</td>
+      <td>78</td>
     </tr>
     <tr>
       <td>2</td>
       <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>Operational</td>
+      <td>13</td>
     </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
   </tbody>
 </Table>
 </div>
 
             </div>
 
-
            
+
+            <div className="col-md-7 padding-top-25">
+
+            <Mydatepicker />
+            </div>
+            </div>
+
+
+
 
             
             </div>

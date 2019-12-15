@@ -23,10 +23,31 @@
     background-position: center;
     height: 300px;
 }
-.table_width{
-    width: 466px;
-}
+
 .table_view_position{
     position: relative;
     left: 30px;
+}
+.DateRangePicker__Month{
+    width: 225px;
+}
+.padding-top-25{
+    padding-top: 25px;
+}
+.DateRangePicker__CalendarSelection{
+    background-color: #6AC7F4 !important;
+}
+.table-bordered td, .table-bordered th ,.table-bordered {
+    border: 0px solid ;
+    font-family: barlow-medium;
+}
+.table-bordered th 
+{
+    background-color: #F2F3F0;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: white;
+}
+.DateRangePicker {
+    font-family: barlow-medium;
 }
