@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Notification_Icon" data-name="Notification Icon" class="cls-1" d="M6.75,15.75h4.5a2.25,2.25,0,0,1-4.5,0ZM1.125,14.625a1.125,1.125,0,1,1,0-2.25h.563A4.9,4.9,0,0,0,3.375,9V5.625A5.571,5.571,0,0,1,9,0a5.57,5.57,0,0,1,5.624,5.625V9a4.895,4.895,0,0,0,1.688,3.376h.563a1.125,1.125,0,1,1,0,2.25Z"/>
+</svg>

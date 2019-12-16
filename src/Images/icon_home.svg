@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="18" height="18"/>
+    </clipPath>
+  </defs>
+  <g id="icon_home" class="cls-2">
+    <path id="Path_357" data-name="Path 357" class="cls-3" d="M17.529,5.834,9.654.209a1.125,1.125,0,0,0-1.307,0L.471,5.834A1.125,1.125,0,0,0,1.779,7.666l.471-.337v9.546A1.125,1.125,0,0,0,3.375,18h11.25a1.125,1.125,0,0,0,1.125-1.125V7.329a1.917,1.917,0,0,0,1.124.546,1.125,1.125,0,0,0,.655-2.041ZM13.5,15.75H11.25V12.375a2.25,2.25,0,0,0-4.5,0V15.75H4.5V5.722L9,2.508l4.5,3.214Z" transform="translate(0 0)"/>
+  </g>
+</svg>
