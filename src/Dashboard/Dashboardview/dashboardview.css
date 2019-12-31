@@ -45,9 +45,28 @@
 {
     background-color: #F2F3F0;
 }
+.table-striped tbody {
+    cursor: pointer;
+}
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: white;
 }
 .DateRangePicker {
     font-family: barlow-medium;
+}
+.modal_header{
+    margin: auto;
+    padding: 15px;
+    padding-bottom: 25px;
+    color:teal;
+}
+.modal_item{
+padding-left: 35px;
+padding-bottom: 0px;
+}
+.modal_close{
+    width: 100px;
+    margin: auto;
+    margin-bottom: 25px;
 }
