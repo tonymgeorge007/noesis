@@ -25,6 +25,16 @@ class Dashboardview extends Component {
     this.sumbitSensor = this.sumbitSensor.bind(this);
   } 
 
+  componentWillMount ()
+  {
+    if(localStorage.getItem("username") === null)
+    {
+      // this.props.history.push('/');
+      alert("Login use a valid credential for view Dashboard");
+      window.location.href = '/';
+    }
+  }
+
   showModal = () => {
     this.setState({ show: true });
   };
@@ -62,13 +72,9 @@ console.log("sensor",sensor);
     this.showModal();
     // alert(sensor_response[0].p_result.ChipID);
     
-
-
   })
 }
  
-
-
   render() {
     return (
     <div>
@@ -76,7 +82,7 @@ console.log("sensor",sensor);
             <div className="dashboard-header">
 
               <h3>Noise Levels</h3>
-              
+              <p className="username"> {localStorage.getItem("username")}<i class="arrow down"></i></p>
             </div>
             <div className="dashboard-map"></div>
             <div className="dashboard-middile row">

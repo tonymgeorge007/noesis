@@ -44,6 +44,7 @@ console.log("user",user);
   instance.post(`/rpc/userauth`, user  )
   .then(res => {
     let login_response = res.data;
+    localStorage.setItem("username", login_response[0].p_result.displayname);
     if (login_response[0].p_result.displayname != null)
     {
       this.props.history.push('/dashboard');
@@ -74,7 +75,7 @@ console.log("user",user);
        </div>
 
        <div className="col-md-8">
-        <input type="text"  className="floatleft" id="password" name="password"  value={this.state.password} onChange={(e) => this.handleChangepass(e)} />
+        <input  type="password"  className="floatleft" id="password" name="password"  value={this.state.password} onChange={(e) => this.handleChangepass(e)} />
         </div>
        </div>
 
