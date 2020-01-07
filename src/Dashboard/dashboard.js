@@ -7,7 +7,9 @@ class Dashboard extends Component {
   render() {
     return (
     <div>
-        <div className="row margin_right_0">
+      <p  className="in-mobile-h3">Use Desktop Version</p>
+        <div className="row margin_right_0 in-mobile">
+          
             <div className="col-md-2 padding_right_0">
               <Menu />
             </div>

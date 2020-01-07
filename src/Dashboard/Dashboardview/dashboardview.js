@@ -16,6 +16,10 @@ class Dashboardview extends Component {
     latitude:'',
     RMS_peak:'',
     sharpness:'',
+    device_id:'',
+    ChipIDnew:'',
+    status:'',
+    sensorliststate:[],
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw'
   }
 
@@ -33,7 +37,35 @@ class Dashboardview extends Component {
       alert("Login use a valid credential for view Dashboard");
       window.location.href = '/';
     }
+
+this.listSensor();
+
   }
+
+  listSensor() {
+
+    const sensorlist = {
+      p_projectid:123
+    };
+console.log("sensorlist",sensorlist);
+
+    const sensorlistinstance = axios.create({
+      baseURL: 'http://34.90.114.171:3000',
+      headers: {
+        Authorization: "Bearer " + this.state.token,
+        "Content-Type": "application/json"
+      }
+    });
+
+    sensorlistinstance.post(`/rpc/dashboard`, sensorlist )
+  .then(res => {
+    let sensorlist_response = res.data;
+    console.log("sensorlist_response",sensorlist_response[0].p_result);
+    this.setState({ sensorliststate: sensorlist_response[0].p_result});
+
+    
+  })
+}
 
   showModal = () => {
     this.setState({ show: true });
@@ -42,10 +74,10 @@ class Dashboardview extends Component {
   hideModal = () => {
     this.setState({ show: false });
   };
-  sumbitSensor() {
+  sumbitSensor(chipidentifier) {
 
     const sensor = {
-      p_chipid: "10312639",
+      p_chipid: chipidentifier.toString(),
       p_datetime: "2019-12-29T19:56:00"
     };
 console.log("sensor",sensor);
@@ -91,29 +123,29 @@ console.log("sensor",sensor);
             <div className="row">
             <h3>Tabular data</h3>
 </div>
-<div className="row">
-            <Table striped bordered hover className="table_width table_view_position" >
+<div className="row table_width_height">
+            <Table striped bordered hover className=" table_view_position" >
   <thead>
     <tr>
-      <th>#</th>
-      <th>ADDRESS</th>
+      <th>CUSTOMER</th>
+      <th>DEVICE ID</th>
+      <th>CHIP ID</th>
       <th>STATUS</th>
-      <th>LEVEL (DB)</th>
     </tr>
   </thead>
   <tbody>
-    <tr onClick={this.sumbitSensor}>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Operational</td>
-      <td>78</td>
+
+  {this.state.sensorliststate.map((sensorliststate, index) => (
+    <tr onClick={event => this.sumbitSensor(sensorliststate.ChipID)}>
+    <td>{sensorliststate.Customer}</td>
+    <td>{sensorliststate.DeviceID}</td>
+    <td>{sensorliststate.ChipID}</td>
+    <td>{sensorliststate.Status}</td>
     </tr>
-    <tr onClick={this.sumbitSensor}>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Operational</td>
-      <td>13</td>
-    </tr>
+
+    ))}
+
+
 
   </tbody>
 </Table>

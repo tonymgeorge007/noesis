@@ -23,3 +23,19 @@
 .loginbutton{
     margin: auto;
 }
+
+@media screen and (max-width: 768px) {
+    .loginform{
+        top: 35%;
+        height: 220px;
+        border-radius: 0px;
+    }
+    .floatleft{
+        float: none;
+    
+    }
+    .loginbutton{
+        margin-top: 10px;
+    }
+    
+  }
