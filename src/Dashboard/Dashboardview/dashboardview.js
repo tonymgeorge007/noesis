@@ -4,6 +4,7 @@ import { Table } from 'react-bootstrap';
 import Mydatepicker from './datepicker';
 import axios from 'axios';
 import { Modal } from 'react-bootstrap';
+import moment from 'moment';
 
 
 class Dashboardview extends Component {
@@ -19,6 +20,7 @@ class Dashboardview extends Component {
     device_id:'',
     ChipIDnew:'',
     status:'',
+    recieveddate:'',
     sensorliststate:[],
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw'
   }
@@ -78,7 +80,7 @@ console.log("sensorlist",sensorlist);
 
     const sensor = {
       p_chipid: chipidentifier.toString(),
-      p_datetime: "2019-12-29T19:56:00"
+      p_datetime: null
     };
 console.log("sensor",sensor);
 
@@ -101,6 +103,7 @@ console.log("sensor",sensor);
     this.setState({ latitude: sensor_response[0].p_result.LatitudeGPS });
     this.setState({ RMS_peak: sensor_response[0].p_result.RMS_Peak });
     this.setState({ sharpness: sensor_response[0].p_result.Sharpness });
+    this.setState({ recieveddate: sensor_response[0].p_result.ReceivedTime });
     this.showModal();
     // alert(sensor_response[0].p_result.ChipID);
     
@@ -127,7 +130,7 @@ console.log("sensor",sensor);
             <Table striped bordered hover className=" table_view_position" >
   <thead>
     <tr>
-      <th>CUSTOMER</th>
+      <th>PROJECT</th>
       <th>DEVICE ID</th>
       <th>CHIP ID</th>
       <th>STATUS</th>
@@ -136,11 +139,11 @@ console.log("sensor",sensor);
   <tbody>
 
   {this.state.sensorliststate.map((sensorliststate, index) => (
-    <tr onClick={event => this.sumbitSensor(sensorliststate.ChipID)}>
-    <td>{sensorliststate.Customer}</td>
-    <td>{sensorliststate.DeviceID}</td>
-    <td>{sensorliststate.ChipID}</td>
-    <td>{sensorliststate.Status}</td>
+    <tr className="fonttable" onClick={event => this.sumbitSensor(sensorliststate.ChipID)}>
+    <td className="fonttable" >{sensorliststate.Project}</td>
+    <td className="fonttable" >{sensorliststate.DeviceID}</td>
+    <td className="fonttable" >{sensorliststate.ChipID}</td>
+    <td className="fonttable" >{sensorliststate.Status}</td>
     </tr>
 
     ))}
@@ -157,8 +160,9 @@ console.log("sensor",sensor);
     <p className="modal_item">DIR LF :  {this.state.dir_lf}</p>
     <p className="modal_item">RMS Peak : {this.state.RMS_peak}</p>
     <p className="modal_item">Sharpness : {this.state.sharpness}</p>
-    <p className="modal_item">Longitude : {this.state.longitude}</p>
-    <p className="modal_item">Latitude : {this.state.latitude}</p>
+    {/* <p className="modal_item">Longitude : {this.state.longitude}</p> */}
+    {/* <p className="modal_item">Latitude : {this.state.latitude}</p> */}
+    <p className="modal_item">Received Time : {moment(this.state.recieveddate).format("YYYY-MM-DD HH:mm:ss")}</p>
          
 
 <button type="button"  className="modal_close" onClick={this.hideModal}>CLOSE</button>

@@ -27,7 +27,7 @@
 .table_view_position{
     position: relative;
     left: 30px;
-    height: 200px;
+    height: 300px;
     display: block;
     overflow-y: scroll;
 }
@@ -91,10 +91,13 @@ padding-bottom: 0px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
   }
-  .table_width_height{
-    height: 200px;
-  }
+ 
   .table_view_position th {
       padding-left: 30px;
       padding-right: 30px;
+  }
+  .fonttable {
+      padding-top: 4px !important ;
+      padding-bottom: 0px !important;
+      font-size: 15px;
   }

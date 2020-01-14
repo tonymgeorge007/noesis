@@ -1,6 +1,6 @@
 .menu{
     background-color: #475890;
-    height: 100vh;
+    height: 100%;
     font-family: barlow-medium;
 }
 .menu-heading h3{
@@ -43,8 +43,8 @@ color: white;
     top: -100px;
     position: relative;
 }
-.menu-list-style li:hover , .menu-list-style li:active{
-    background-color: #3F4E80;
+.menu-list-style li{
+    cursor: pointer;
 }
 .logo-icon{
     width:300px;
