@@ -172,11 +172,7 @@ console.log("sensor",sensor);
 
 </div>
 
-
-
             </div>
-
-           
 
             <div className="col-md-7 padding-top-25">
 
@@ -184,10 +180,6 @@ console.log("sensor",sensor);
             </div>
             </div>
 
-
-
-
-            
             </div>
             
     </div>
