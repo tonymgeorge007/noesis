@@ -3,8 +3,10 @@ import './dashboardview.css';
 import { Table } from 'react-bootstrap';
 import Mydatepicker from './datepicker';
 import axios from 'axios';
-import { Modal } from 'react-bootstrap';
+import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
+import SimpleMap from './mapview';
+import user from '../../Images/user.png';
 
 
 class Dashboardview extends Component {
@@ -31,11 +33,17 @@ class Dashboardview extends Component {
     this.sumbitSensor = this.sumbitSensor.bind(this);
   } 
 
+
+  logout(){
+    {localStorage.removeItem("username");}
+    window.location.href = '/';
+  }
+
+
   componentWillMount ()
   {
     if(localStorage.getItem("username") === null)
     {
-      // this.props.history.push('/');
       alert("Login use a valid credential for view Dashboard");
       window.location.href = '/';
     }
@@ -105,7 +113,6 @@ console.log("sensor",sensor);
     this.setState({ sharpness: sensor_response[0].p_result.Sharpness });
     this.setState({ recieveddate: sensor_response[0].p_result.ReceivedTime });
     this.showModal();
-    // alert(sensor_response[0].p_result.ChipID);
     
   })
 }
@@ -117,9 +124,24 @@ console.log("sensor",sensor);
             <div className="dashboard-header">
 
               <h3>Noise Levels</h3>
-              <p className="username"> {localStorage.getItem("username")}<i class="arrow down"></i></p>
+            
+              <Dropdown>
+  <Dropdown.Toggle className="username" variant="success" id="dropdown-basic">
+  <span><img src={user} alt="User" className="userpic" />{localStorage.getItem("username")}</span>
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item onClick={this.logout}>Logout</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+
             </div>
-            <div className="dashboard-map"></div>
+            <div className="dashboard-map">
+
+
+            {/* <SimpleMap /> */}
+
+            </div>
             <div className="dashboard-middile row">
 
               <div className="col-md-5">

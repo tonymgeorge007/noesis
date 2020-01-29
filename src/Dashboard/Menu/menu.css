@@ -40,15 +40,15 @@ color: white;
 .menu-bottom{
     color: white;
     font-size: 21px;
-    top: -100px;
     position: relative;
+    top: 150px;
 }
 .menu-list-style li{
     cursor: pointer;
 }
 .logo-icon{
-    width:300px;
-    height:400px;
-    left: -35px;
+    width:92px;
+    height:110px;
     position: relative;
+    top:150px;
 }
