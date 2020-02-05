@@ -6,6 +6,7 @@ import sensors from '../../Images/Icon metro-wrench.svg';
 import help from '../../Images/icon_help-center.svg';
 import setting from '../../Images/icon_setting.svg';
 import logo from '../../Images/NOESIS_LOGO.png';
+import showheatmap from '../Dashboardview/dashboardview';
 
 
 
@@ -28,7 +29,7 @@ class Menu extends Component {
                     <li  className="row">
                     <span className="menu-span"><img src={sensors} className="menu-icon"/> <p  className="menu-list">SENSORS</p></span>
                     </li>
-                    <li  className="row">
+                    <li  className="row"  onClick={this.showheatmap}>
                     <span className="menu-span"><img src={home} className="menu-icon"/> <p  className="menu-list">HEATMAPS</p></span>
                     </li>
                     <li  className="row">

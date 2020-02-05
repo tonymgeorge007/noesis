@@ -7,11 +7,14 @@ import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
 import SimpleMap from './mapview';
 import user from '../../Images/user.png';
+import SimpleExample from './mapviewleaf';
+import Heatmap from './heatmap';
 
 
 class Dashboardview extends Component {
   state = {
     show: false,
+    heatmap: false,
     ChipID:'',
     rms_lf:'',
     dir_lf:'',
@@ -38,7 +41,10 @@ class Dashboardview extends Component {
     {localStorage.removeItem("username");}
     window.location.href = '/';
   }
-
+  showheatmap(){
+    this.setState({ heatmap: true})
+    console.log("trigggered");
+  }
 
   componentWillMount ()
   {
@@ -118,8 +124,13 @@ console.log("sensor",sensor);
 }
  
   render() {
-    return (
-    <div>
+    const heatmaprender = this.state.heatmap;
+        
+  if (heatmaprender) {
+    return <Heatmap />;
+  }
+  else {
+    return <div>
             <div className="dashboard">
             <div className="dashboard-header">
 
@@ -134,12 +145,9 @@ console.log("sensor",sensor);
     <Dropdown.Item onClick={this.logout}>Logout</Dropdown.Item>
   </Dropdown.Menu>
 </Dropdown>
-
             </div>
             <div className="dashboard-map">
-
-
-            {/* <SimpleMap /> */}
+            <SimpleExample />
 
             </div>
             <div className="dashboard-middile row">
@@ -196,8 +204,10 @@ console.log("sensor",sensor);
 
             </div>
 
-            <div className="col-md-7 padding-top-25">
-
+            <div className="col-md-7">
+<div className="row">
+            <h3>Time and date range</h3>
+</div>
             <Mydatepicker />
             </div>
             </div>
@@ -205,7 +215,7 @@ console.log("sensor",sensor);
             </div>
             
     </div>
-    );
+  }
   }
 }
 
