@@ -157,7 +157,7 @@ console.log("sensor",sensor);
             <h3>Tabular data</h3>
 </div>
 <div className="row table_width_height">
-            <Table striped bordered hover className=" table_view_position" >
+            <Table striped bordered hover className=" table_view_position table-zindex" >
   <thead>
     <tr>
       <th>PROJECT</th>

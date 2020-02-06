@@ -6,9 +6,9 @@ export default class SimpleExample extends React.Component {
   constructor() {
     super();
     this.state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13,
+      lat: 51.996256,
+      lng: 5.974894,
+      zoom: 15,
     };
   }
 
