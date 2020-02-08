@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
-import './heatmap.css';
+import './sensors.css';
 import { Table } from 'react-bootstrap';
 import Mydatepicker from './datepicker';
 import axios from 'axios';
 import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
 import user from '../../Images/user.png';
-import SimpleExample from './mapviewleaf';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemHeading,
-    AccordionItemButton,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
-import 'react-accessible-accordion/dist/fancy-example.css';
-import Dummyaccordian from './accordian';
-import HeatmapLeaf from './heatmapleafmap';
-import InputRange from 'react-input-range';
-import 'react-input-range/lib/css/index.css';
+import SensorLeaf from './sensorleafmap';
 
 
 class Sensors extends Component {
@@ -27,7 +15,7 @@ class Sensors extends Component {
   }
     state = {
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw',
-    value: { min: 2, max: 10 },
+
   }
 
   logout(){
@@ -54,8 +42,66 @@ class Sensors extends Component {
             </div>
 
 
+<div className="row">
+            <div className="col-md-12 sensormappadding">
+            <SensorLeaf />
+            </div>
+</div>
+
+
+<div className="row">
+            <div className="dashboard-header">
+              <h3>Tabular data</h3>
+              </div>
+</div>
+
+<div className="row ">
+<div className="col-md-12 sensormappadding"> 
+            <Table striped bordered hover className="sensor_table_height" >
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>ADDRESS</th>
+      <th>AREA</th>
+      <th>STATUS</th>
+      <th>NOISE (24 HR)</th>
+      <th>NOISE GRAPH(24 HR)</th>
+      <th>ACTIONS</th>
+      <th>HISTORY</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr  >
+    <td>22</td>
+    <td>High Street 37</td>
+    <td>Downtown</td>
+    <td>Operational</td>
+    <td>75</td>
+    <td></td>
+    <td>Create Ticket</td>
+    <td>Ticket History</td>
+    </tr>
+    
+
+
+
+
+  </tbody>
+</Table>
+
+
+
+
+</div>
+
+
+
+</div>
+
 
     </div>
+
     );
   }
 }
