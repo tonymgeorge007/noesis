@@ -5,16 +5,17 @@ import Mydatepicker from './datepicker';
 import axios from 'axios';
 import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
-import SimpleMap from './mapview';
 import user from '../../Images/user.png';
 import SimpleExample from './mapviewleaf';
 import Heatmap from './heatmap';
+import Sensors from './sensors';
 
 
 class Dashboardview extends Component {
   state = {
     show: false,
     heatmap: false,
+    sensor_page: true,
     ChipID:'',
     rms_lf:'',
     dir_lf:'',
@@ -125,9 +126,14 @@ console.log("sensor",sensor);
  
   render() {
     const heatmaprender = this.state.heatmap;
+    const sensor_page = this.state.sensor_page;
         
   if (heatmaprender) {
     return <Heatmap />;
+  }
+
+  else if   (sensor_page) {
+    return <Sensors />;
   }
   else {
     return <div>
