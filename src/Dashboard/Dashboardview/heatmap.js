@@ -55,7 +55,7 @@ class Heatmap extends Component {
 
         <div className="row">
           
-            <div className="col-md-3" >
+            <div className="col-md-3 padding_left_40" >
               <Dummyaccordian />
             </div>
             <div className="col-md-9 ">

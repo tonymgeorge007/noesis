@@ -144,7 +144,7 @@ console.log("sensor",sensor);
   </Dropdown.Menu>
 </Dropdown>
             </div>
-            <div className="dashboard-map">
+            <div className="dashboard-map padding_left_20">
             <SimpleExample />
 
             </div>
