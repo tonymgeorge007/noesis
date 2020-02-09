@@ -1,0 +1,23 @@
+.sensor_details h6{
+    font-family: barlow-medium;
+    font-size: 16px;
+    font-weight: 700px !important;
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding-left: 30px;
+}
+.sensor_details p{
+    font-family: barlow-medium;
+    font-size: 14px;
+    font-weight: 400px;
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding-left: 30px;
+    position: relative;
+    top: -5px;
+}
+.sensor_click_div .dashboard-header h3{
+    padding-left: 30px;
+}

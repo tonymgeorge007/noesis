@@ -9,13 +9,13 @@ import user from '../../Images/user.png';
 import SimpleExample from './mapviewleaf';
 import Heatmap from './heatmap';
 import Sensors from './sensors';
+import SensorClick from './sensorclick'
 
 
 class Dashboardview extends Component {
   state = {
     show: false,
-    heatmap: false,
-    sensor_page: true,
+    sensor_click: false,
     ChipID:'',
     rms_lf:'',
     dir_lf:'',
@@ -125,17 +125,9 @@ console.log("sensor",sensor);
 }
  
   render() {
-    const heatmaprender = this.state.heatmap;
-    const sensor_page = this.state.sensor_page;
+    const sensor_click = this.state.sensor_click;
         
-  if (heatmaprender) {
-    return <Heatmap />;
-  }
-
-  else if   (sensor_page) {
-    return <Sensors />;
-  }
-  else {
+    {
     return <div>
             <div className="dashboard">
             <div className="dashboard-header">
@@ -158,7 +150,14 @@ console.log("sensor",sensor);
             </div>
             <div className="dashboard-middile row">
 
-              <div className="col-md-5">
+
+            {/* <SensorClick /> */}
+
+            <div className="col-md-5">
+
+
+
+
             <div className="row">
             <h3>Tabular data</h3>
 </div>
@@ -196,8 +195,14 @@ console.log("sensor",sensor);
     <p className="modal_item">DIR LF :  {this.state.dir_lf}</p>
     <p className="modal_item">RMS Peak : {this.state.RMS_peak}</p>
     <p className="modal_item">Sharpness : {this.state.sharpness}</p>
+
+
+
     {/* <p className="modal_item">Longitude : {this.state.longitude}</p> */}
     {/* <p className="modal_item">Latitude : {this.state.latitude}</p> */}
+
+
+
     <p className="modal_item">Received Time : {moment(this.state.recieveddate).format("YYYY-MM-DD HH:mm:ss")}</p>
          
 

@@ -8,7 +8,7 @@ import setting from '../../Images/icon_setting.svg';
 import logo from '../../Images/NOESIS_LOGO.png';
 import showheatmap from '../Dashboardview/dashboardview';
 
-
+import { Link } from 'react-router-dom'
 
 
 class Menu extends Component {
@@ -20,18 +20,24 @@ class Menu extends Component {
             </div>
             <div className="menu-items">
                 <ul className="menu-list-style">
-                    <li className="row">
-                    <span className="menu-span"><img src={home} className="menu-icon"/> <p  className="menu-list">HOME</p></span>
-                    </li>
+                        <li className="row">
+                            <span className="menu-span"><img src={home} className="menu-icon"/> <p  className="menu-list">HOME</p></span>
+                        </li>
+                    <Link to="/dashboard" from="/dashboard">
+                         <li  className="row">
+                    		<span className="menu-span"><img src={noise} className="menu-icon"/> <p  className="menu-list">NOISE LEVELS</p></span>
+                    	</li>
+                    </Link>
+                    <Link to="/dashboard/sensors">
+						<li  className="row">
+                    		<span className="menu-span"><img src={sensors} className="menu-icon"/> <p  className="menu-list">SENSORS</p></span>
+                    	</li>
+					</Link>
+                    <Link to="/dashboard/heatmap">
                     <li  className="row">
-                    <span className="menu-span"><img src={noise} className="menu-icon"/> <p  className="menu-list">NOISE LEVELS</p></span>
-                    </li>
-                    <li  className="row">
-                    <span className="menu-span"><img src={sensors} className="menu-icon"/> <p  className="menu-list">SENSORS</p></span>
-                    </li>
-                    <li  className="row"  onClick={this.showheatmap}>
                     <span className="menu-span"><img src={home} className="menu-icon"/> <p  className="menu-list">HEATMAPS</p></span>
                     </li>
+					</Link>
                     <li  className="row">
                     <span className="menu-span"><img src={help} className="menu-icon"/> <p  className="menu-list">HELP</p></span>
                     </li>
