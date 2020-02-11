@@ -24,7 +24,7 @@ export default function Login(props) {
 console.log("user",user);
 
     const instance = axios.create({
-      baseURL: 'http://34.90.114.171:3000',
+      baseURL: 'http://158.101.193.151:3000',
       headers: {
         Authorization: "Bearer " + token,
         "Content-Type": "application/json"

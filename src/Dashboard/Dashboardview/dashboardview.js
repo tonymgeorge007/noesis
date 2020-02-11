@@ -67,7 +67,7 @@ this.listSensor();
 console.log("sensorlist",sensorlist);
 
     const sensorlistinstance = axios.create({
-      baseURL: 'http://34.90.114.171:3000',
+      baseURL: 'http://158.101.193.151:3000',
       headers: {
         Authorization: "Bearer " + this.state.token,
         "Content-Type": "application/json"
@@ -100,7 +100,7 @@ console.log("sensorlist",sensorlist);
 console.log("sensor",sensor);
 
     const sensorinstance = axios.create({
-      baseURL: 'http://34.90.114.171:3000',
+      baseURL: 'http://158.101.193.151:3000',
       headers: {
         Authorization: "Bearer " + this.state.token,
         "Content-Type": "application/json"
