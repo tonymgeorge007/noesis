@@ -41,14 +41,14 @@ class Menu extends Component {
                     <li  className="row">
                     <span className="menu-span"><img src={help} className="menu-icon"/> <p  className="menu-list">HELP</p></span>
                     </li>
-                    <li  className="row">
+                    {/* <li  className="row">
                     <span className="menu-span"><img src={setting} className="menu-icon"/> <p  className="menu-list">SETTINGS</p></span>
-                    </li>
+                    </li> */}
                     
                 </ul>
             </div>
             <img src={logo} className="logo-icon"/>
-            <h3 className="menu-bottom">NOESIS</h3>
+            {/* <h3 className="menu-bottom">NOESIS</h3> */}
     </div>
     );
   }
