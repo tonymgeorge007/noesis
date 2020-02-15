@@ -11,7 +11,7 @@ export default class HeatmapLeaf extends Component<{}, State> {
   state = {
       lat: 51.996256,
       lng: 5.974894,
-      zoom: 15,
+      zoom: 18,
   }
 
   render() {

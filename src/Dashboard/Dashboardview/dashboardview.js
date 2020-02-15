@@ -9,7 +9,7 @@ import user from '../../Images/user.png';
 import SimpleExample from './mapviewleaf';
 import Heatmap from './heatmap';
 import Sensors from './sensors';
-import SensorClick from './sensorclick'
+import SensorClick from './sensorclick';
 
 
 class Dashboardview extends Component {
@@ -224,7 +224,24 @@ console.log("sensor",sensor);
             </div>
 
             </div>
+
+
+            <div className="row footer">
             
+            <div className="col-md-6">
+            <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
+            <p>Privacy Statement</p>
+            </a>
+            </div>
+            
+            <div className="col-md-6">
+            <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
+            <p>Tearms & Conditions</p>
+            </a>
+            </div>
+            </div>
+
+
     </div>
   }
   }

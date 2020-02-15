@@ -98,7 +98,20 @@ class Sensors extends Component {
 
 
 </div>
-
+            <div className="row footer">
+            
+            <div className="col-md-6">
+            <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
+            <p>Privacy Statement</p>
+            </a>
+            </div>
+            
+            <div className="col-md-6">
+            <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
+            <p>Tearms & Conditions</p>
+            </a>
+            </div>
+            </div>
 
     </div>
 

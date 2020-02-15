@@ -1,6 +1,6 @@
 .sensor_details h6{
     font-family: barlow-medium;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700px !important;
     float: left;
     width: 100%;
@@ -9,7 +9,7 @@
 }
 .sensor_details p{
     font-family: barlow-medium;
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 400px;
     float: left;
     width: 100%;

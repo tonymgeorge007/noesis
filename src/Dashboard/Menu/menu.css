@@ -4,9 +4,10 @@
     font-family: barlow-medium;
 }
 .menu-heading h3{
-    font-size: 20px;
+    font-size: 1.25rem;
     color:rgba(255, 255, 255, .3);
     padding: 28px 0px 28px 0px;
+    letter-spacing: .150rem;
 }
 .menu-heading {
     background-color:#3F4E80;
@@ -20,10 +21,11 @@ height: 18px;
 .menu-list{
 float: left;
 padding-left: 13px;
-font-size: 16px;
+font-size: 1rem;
 top: -4px;
 position: relative;
 color: white;
+letter-spacing: .1rem;
 }
 
 .menu-list-style{
@@ -39,7 +41,7 @@ color: white;
 }
 .menu-bottom{
     color: white;
-    font-size: 21px;
+    font-size: 1.3125rem;
     position: relative;
     top: 150px;
 }
@@ -50,5 +52,15 @@ color: white;
     width:92px;
     height:110px;
     position: relative;
-    top:150px;
+    position: absolute;
+    top: 75%;
+    left: 33%;
+}
+.footer p {
+    font-size: 14px;
+    text-decoration: underline;
+    font-family:  barlow-medium;
+    padding-top: 30px;
+    margin-bottom: 5px;
+    color: black;
 }
