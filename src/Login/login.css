@@ -1,7 +1,7 @@
 .loginscreen{
     background-image: url(../Images/map.jpg);
     background-position: center;
-    background-size: auto;
+    background-size:cover;
     background-repeat: repeat;
     height: 100vh;
 }

@@ -20,33 +20,34 @@ class Menu extends Component {
             </div>
             <div className="menu-items">
                 <ul className="menu-list-style">
-                        <li className="row">
+                        {/* <li className="row margin_right_0">
                             <span className="menu-span"><img src={home} className="menu-icon"/> <p  className="menu-list">HOME</p></span>
-                        </li>
+                        </li> */}
                     <Link to="/dashboard" from="/dashboard">
-                         <li  className="row">
+                         <li  className="row margin_right_0">
                     		<span className="menu-span"><img src={noise} className="menu-icon"/> <p  className="menu-list">NOISE LEVELS</p></span>
                     	</li>
                     </Link>
                     <Link to="/dashboard/sensors">
-						<li  className="row">
+						<li  className="row margin_right_0">
                     		<span className="menu-span"><img src={sensors} className="menu-icon"/> <p  className="menu-list">SENSORS</p></span>
                     	</li>
 					</Link>
                     <Link to="/dashboard/heatmap">
-                    <li  className="row">
+                    <li  className="row margin_right_0">
                     <span className="menu-span"><img src={home} className="menu-icon"/> <p  className="menu-list">HEATMAPS</p></span>
                     </li>
 					</Link>
-                    <li  className="row">
+                    {/* <li  className="row margin_right_0">
                     <span className="menu-span"><img src={help} className="menu-icon"/> <p  className="menu-list">HELP</p></span>
-                    </li>
+                    </li> */}
                     {/* <li  className="row">
                     <span className="menu-span"><img src={setting} className="menu-icon"/> <p  className="menu-list">SETTINGS</p></span>
                     </li> */}
                     
                 </ul>
             </div>
+            <div className="logo-icon-top"></div>
             <img src={logo} className="logo-icon"/>
             {/* <h3 className="menu-bottom">NOESIS</h3> */}
     </div>

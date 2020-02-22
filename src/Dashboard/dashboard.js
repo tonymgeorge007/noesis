@@ -13,7 +13,7 @@ class Dashboard extends Component {
 
     return (
     <div>
-      <p  className="in-mobile-h3">Use Desktop Version</p>
+      {/* <p  className="in-mobile-h3">Use Desktop Version</p> */}
         <div className="row margin_right_0 in-mobile">
           
             <div className="col-md-2 padding_right_0">

@@ -71,7 +71,7 @@ class Heatmap extends Component {
 <div  className="dashboard-header row">
             <h3>Time and date range</h3>
 </div>
-<div className="datepicker-heatmap">
+<div className="datepicker-heatmap datepicker-heatmap-position">
             <Mydatepicker />
 </div>
             </div>
@@ -113,19 +113,26 @@ class Heatmap extends Component {
 
 
         </div>
-                    <div className="row footer">
+            <div className="row footer">
             
-            <div className="col-md-6">
+            <div className="col-md-4">
             <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
             <p>Privacy Statement</p>
             </a>
             </div>
             
-            <div className="col-md-6">
+            <div className="col-md-4">
             <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
-            <p>Tearms & Conditions</p>
+            <p>Terms & Conditions</p>
             </a>
             </div>
+
+            <div className="col-md-4">
+            <a href="https://noesis.network/">
+            <p>About Us</p>
+            </a>
+            </div>
+            
             </div>
     </div>
     );

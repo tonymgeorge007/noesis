@@ -20,7 +20,7 @@ class Dummyaccordian extends Component {
     return (
     <div>
 
-            <div className="dashboard-header">
+            <div className="dashboard-header accordian_h3">
               <h3>Filter</h3>
               </div>
 

@@ -162,7 +162,7 @@ console.log("sensor",sensor);
             <h3>Tabular data</h3>
 </div>
 <div className="row table_width_height">
-            <Table striped bordered hover className=" table_view_position table-zindex" >
+            <Table striped bordered hover className=" table_view_position scrollbar table-zindex" >
   <thead>
     <tr>
       <th>PROJECT</th>
@@ -215,7 +215,7 @@ console.log("sensor",sensor);
 
             </div>
 
-            <div className="col-md-7">
+            <div className="col-md-7 middile_second datepicker_dashboard">
 <div className="row">
             <h3>Time and date range</h3>
 </div>
@@ -228,17 +228,24 @@ console.log("sensor",sensor);
 
             <div className="row footer">
             
-            <div className="col-md-6">
+            <div className="col-md-4">
             <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
             <p>Privacy Statement</p>
             </a>
             </div>
             
-            <div className="col-md-6">
+            <div className="col-md-4">
             <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
-            <p>Tearms & Conditions</p>
+            <p>Terms & Conditions</p>
             </a>
             </div>
+
+            <div className="col-md-4">
+            <a href="https://noesis.network/">
+            <p>About Us</p>
+            </a>
+            </div>
+            
             </div>
 
 

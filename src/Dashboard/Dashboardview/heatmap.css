@@ -53,3 +53,10 @@
 .accordion__item{
     font-family: barlow-medium !important;
 }
+.accordian_h3 h3{
+    padding-left: 0px;
+}
+.datepicker-heatmap-position{
+    position: relative;
+    left: -30px;
+}

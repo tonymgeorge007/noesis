@@ -26,7 +26,7 @@ class Sensors extends Component {
   render() {
     return (
 <div>
-            <div className="dashboard-header">
+            <div className="dashboard-header ">
 
               <h3>Sensors</h3>
             
@@ -50,7 +50,7 @@ class Sensors extends Component {
 
 
 <div className="row">
-            <div className="dashboard-header">
+            <div className="dashboard-header sensors">
               <h3>Tabular data</h3>
               </div>
 </div>
@@ -100,17 +100,24 @@ class Sensors extends Component {
 </div>
             <div className="row footer">
             
-            <div className="col-md-6">
+            <div className="col-md-4">
             <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
             <p>Privacy Statement</p>
             </a>
             </div>
             
-            <div className="col-md-6">
+            <div className="col-md-4">
             <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
-            <p>Tearms & Conditions</p>
+            <p>Terms & Conditions</p>
             </a>
             </div>
+
+            <div className="col-md-4">
+            <a href="https://noesis.network/">
+            <p>About Us</p>
+            </a>
+            </div>
+            
             </div>
 
     </div>

@@ -1,6 +1,6 @@
 .menu{
     background-color: #475890;
-    height: 100%;
+    height: 100vh;
     font-family: barlow-medium;
 }
 .menu-heading h3{
@@ -17,6 +17,7 @@
 float: left;
 width: 18px;
 height: 18px;
+margin-top: 15px;
 }
 .menu-list{
 float: left;
@@ -26,15 +27,18 @@ top: -4px;
 position: relative;
 color: white;
 letter-spacing: .1rem;
+padding-top: 15px;
+margin-bottom: 5px;
 }
 
 .menu-list-style{
     list-style: none;
     margin-top: 20px;
+    padding-left: 0px;
 }
 .menu-span{
     position: relative;
-    left: -15px;
+    left: 0px;
 }
 .menu-items{
     background-color: #475890;
@@ -47,11 +51,17 @@ letter-spacing: .1rem;
 }
 .menu-list-style li{
     cursor: pointer;
+    padding-left: 32px;
+}
+.menu-list-style li:hover{
+    background-color: #3F4E80;
+}
+.logo-icon-top{
+    height: 40%;
 }
 .logo-icon{
     width:92px;
     height:110px;
-    position: relative;
     position: absolute;
     top: 75%;
     left: 33%;
@@ -63,4 +73,7 @@ letter-spacing: .1rem;
     padding-top: 30px;
     margin-bottom: 5px;
     color: black;
+}
+.margin_right_0{
+    margin-right: 0px;
 }
