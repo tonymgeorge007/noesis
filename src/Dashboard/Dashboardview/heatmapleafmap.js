@@ -1,19 +1,21 @@
+
 import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import {
+  Circle,
+  FeatureGroup,
+  LayerGroup,
+  Map,
+  Popup,
+  TileLayer,
+} from 'react-leaflet'
 
-type State = {
-  lat: number,
-  lng: number,
-  zoom: number,
-}
 
-export default class HeatmapLeaf extends Component<{}, State> {
+export default class HeatmapLeaf extends Component<{}> {
   state = {
-      lat: 51.996256,
-      lng: 5.974894,
-      zoom: 18,
+    lat: 51.996456,
+    lng: 5.974894,
+    zoom: 18,
   }
-
   render() {
     const position = [this.state.lat, this.state.lng]
     return (
@@ -22,11 +24,32 @@ export default class HeatmapLeaf extends Component<{}, State> {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        <LayerGroup>
+        </LayerGroup>
+        <FeatureGroup color="red">
+          <Popup>Noise Level : 45</Popup>
+          <Circle center={[51.996256, 5.974894]} radius={4} />
+        </FeatureGroup>
+        <FeatureGroup color="red">
+          <Popup>Noise Level : 53</Popup>
+          <Circle center={[51.996456, 5.974694]} radius={4} />
+        </FeatureGroup>
+        <FeatureGroup color="red">
+          <Popup>Noise Level : 34</Popup>
+          <Circle center={[51.996756, 5.974464]} radius={4} />
+        </FeatureGroup>
+        <FeatureGroup color="red">
+          <Popup>Noise Level : 72</Popup>
+          <Circle center={[51.996156, 5.974134]} radius={4} />
+        </FeatureGroup>
+        <FeatureGroup color="red">
+          <Popup>Noise Level : 09</Popup>
+          <Circle center={[51.996056, 5.974034]} radius={4} />
+        </FeatureGroup>
+        <FeatureGroup color="red">
+          <Popup>Noise Level : 23</Popup>
+          <Circle center={[51.996656, 5.974134]} radius={4} />
+        </FeatureGroup>
       </Map>
     )
   }
