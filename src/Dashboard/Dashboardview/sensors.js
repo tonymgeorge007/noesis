@@ -15,9 +15,36 @@ class Sensors extends Component {
   }
     state = {
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw',
+    sensortableliststate:[],
 
   }
+  componentWillMount ()
+  {
+    this.sensortableview();
+  }
 
+
+  sensortableview() {
+    const sensortablelist = {
+      p_projectid:123
+    };
+console.log("sensortablelist",sensortablelist);
+
+    const sensortableinstance = axios.create({
+      baseURL: 'http://158.101.193.151:3000',
+      headers: {
+        Authorization: "Bearer " + this.state.token,
+        "Content-Type": "application/json"
+      }
+    });
+
+    sensortableinstance.post(`/rpc/noiselevels`, sensortablelist )
+  .then(res => {
+    let sensortablelist_response = res.data;
+    console.log("sensortablelist_response",sensortablelist_response[0].p_result);
+    this.setState({ sensortableliststate: sensortablelist_response[0].p_result});
+  })
+}
   logout(){
     {localStorage.removeItem("username");}
     window.location.href = '/';
@@ -57,7 +84,7 @@ class Sensors extends Component {
 
 <div className="row ">
 <div className="col-md-12 sensormappadding"> 
-            <Table striped bordered hover className="sensor_table_height" >
+            <Table striped bordered hover className="sensor_table_height sensor_main_table" >
   <thead>
     <tr>
       <th>#</th>
@@ -72,17 +99,19 @@ class Sensors extends Component {
   </thead>
   <tbody>
 
+
+{this.state.sensortableliststate.map((sensortableliststate, index) => (
     <tr  >
-    <td>22</td>
-    <td>High Street 37</td>
-    <td>Downtown</td>
-    <td>Operational</td>
-    <td>75</td>
+    <td>{sensortableliststate.DeviceID}</td>
+    <td>{sensortableliststate.Address.Address}</td>
+    <td>{sensortableliststate.Address.Location}</td>
+    <td>{sensortableliststate.Status}</td>
+    <td>{sensortableliststate.AvgLevel}</td>
     <td></td>
     <td>Create Ticket</td>
     <td>Ticket History</td>
     </tr>
-    
+))}
 
 
 
