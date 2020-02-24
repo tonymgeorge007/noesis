@@ -28,8 +28,6 @@ class Sensors extends Component {
     const sensortablelist = {
       p_projectid:123
     };
-console.log("sensortablelist",sensortablelist);
-
     const sensortableinstance = axios.create({
       baseURL: 'http://158.101.193.151:3000',
       headers: {
@@ -41,7 +39,6 @@ console.log("sensortablelist",sensortablelist);
     sensortableinstance.post(`/rpc/noiselevels`, sensortablelist )
   .then(res => {
     let sensortablelist_response = res.data;
-    console.log("sensortablelist_response",sensortablelist_response[0].p_result);
     this.setState({ sensortableliststate: sensortablelist_response[0].p_result});
   })
 }
