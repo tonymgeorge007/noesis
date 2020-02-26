@@ -63,7 +63,7 @@ export default class SensorLeaf extends Component<{}> {
         </LayerGroup>
 
         {this.state.plotliststate.map((plotliststate, index) => (
-          <FeatureGroup color="red">
+          <FeatureGroup color= {plotliststate.Status == "Online" ? "green" : "red"}>
         <Popup>Device ID : {plotliststate.DeviceID}</Popup>
           <Circle center={[plotliststate.Position.Latitude, plotliststate.Position.Longitude]} radius={4} />
           </FeatureGroup>

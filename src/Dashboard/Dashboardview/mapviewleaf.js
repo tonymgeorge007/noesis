@@ -63,8 +63,7 @@ console.log("plotlist",plotlist);
         </LayerGroup>
 
         {this.state.plotliststate.map((plotliststate, index) => (
-          <FeatureGroup color="red">
-            {console.log("Position",plotliststate.Position)}
+          <FeatureGroup color= {plotliststate.Status == "Online" ? "green" : "red"}>
         <Popup>Device ID : {plotliststate.DeviceID}</Popup>
           <Circle center={[plotliststate.Position.Latitude, plotliststate.Position.Longitude]} radius={4} />
           </FeatureGroup>
