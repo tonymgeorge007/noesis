@@ -11,7 +11,7 @@ padding-left: 42px;
 .sensor_main_table{
     position: relative;
     /* left: 30px; */
-    height: 200px;
+    height: 220px;
     display: block;
     overflow-y: scroll;
 }
