@@ -18,19 +18,24 @@ export default class OtherLayersExample extends Component<{}> {
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw',
     plotliststate:[],
   }
+    constructor(props) {
+    super(props);
+    this.clickedSensor = this.clickedSensor.bind(this);
+  } 
+
 
   componentWillMount ()
   {
     this.plotmap();
   }
 
-
+ clickedSensor(chipidentifier){
+    alert ("You Have clicked the Device : " + chipidentifier + ". Graphical view is under development");
+  }
   plotmap() {
-    console.log("inside plotlist");
     const plotlist = {
       p_projectid:123
     };
-console.log("plotlist",plotlist);
 
     const plotlistinstance = axios.create({
       baseURL: 'http://158.101.193.151:3000',
@@ -43,7 +48,6 @@ console.log("plotlist",plotlist);
     plotlistinstance.post(`/rpc/noiselevels`, plotlist )
   .then(res => {
     let plotlist_response = res.data;
-    console.log("plotlist_response",plotlist_response[0].p_result);
     this.setState({ plotliststate: plotlist_response[0].p_result});
     this.setState({ lat: plotlist_response[0].p_result[0].Position.Latitude});
     this.setState({ lng: plotlist_response[0].p_result[0].Position.Longitude});
@@ -63,9 +67,8 @@ console.log("plotlist",plotlist);
         </LayerGroup>
 
         {this.state.plotliststate.map((plotliststate, index) => (
-          <FeatureGroup color= {plotliststate.Status == "Online" ? "green" : "red"}>
-        <Popup>Device ID : {plotliststate.DeviceID}</Popup>
-        {console.log(plotliststate.Position.Latitude,plotliststate.Position.Longitude,plotliststate.AvgLevel)}
+          <FeatureGroup onClick={event => this.clickedSensor(plotliststate.DeviceID)}  color= {plotliststate.Status == "Online" ? "green" : "red"}>
+        {/* <Popup>Device ID : {plotliststate.DeviceID}</Popup> */}
           <Circle center={[plotliststate.Position.Latitude, plotliststate.Position.Longitude]} radius={4} />
           </FeatureGroup>
     ))}

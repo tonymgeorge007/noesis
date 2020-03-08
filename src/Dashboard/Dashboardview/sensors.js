@@ -7,6 +7,7 @@ import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
 import user from '../../Images/user.png';
 import SensorLeaf from './sensorleafmap';
+import MylistChart from './sensorlistgraph';
 
 
 class Sensors extends Component {
@@ -104,7 +105,9 @@ class Sensors extends Component {
     <td>{sensortableliststate.Address.Location}</td>
     <td>{sensortableliststate.Status}</td>
     <td>{sensortableliststate.AvgLevel}</td>
-    <td></td>
+    <td>
+    {/* <MylistChart /> */}
+    </td>
     <td>Create Ticket</td>
     <td>Ticket History</td>
     </tr>

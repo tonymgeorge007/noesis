@@ -15,7 +15,7 @@ import SensorClick from './sensorclick';
 class Dashboardview extends Component {
   state = {
     show: false,
-    sensor_click: false,
+    sensor_click: true,
     ChipID:'',
     rms_lf:'',
     dir_lf:'',
@@ -44,7 +44,6 @@ class Dashboardview extends Component {
   }
   showheatmap(){
     this.setState({ heatmap: true})
-    console.log("trigggered");
   }
 
   componentWillMount ()
@@ -64,7 +63,6 @@ this.listSensor();
     const sensorlist = {
       p_projectid:123
     };
-console.log("sensorlist",sensorlist);
 
     const sensorlistinstance = axios.create({
       baseURL: 'http://158.101.193.151:3000',
@@ -77,7 +75,6 @@ console.log("sensorlist",sensorlist);
     sensorlistinstance.post(`/rpc/dashboard`, sensorlist )
   .then(res => {
     let sensorlist_response = res.data;
-    console.log("sensorlist_response",sensorlist_response[0].p_result);
     this.setState({ sensorliststate: sensorlist_response[0].p_result});
 
     
@@ -97,7 +94,6 @@ console.log("sensorlist",sensorlist);
       p_chipid: chipidentifier.toString(),
       p_datetime: null
     };
-console.log("sensor",sensor);
 
     const sensorinstance = axios.create({
       baseURL: 'http://158.101.193.151:3000',
@@ -110,7 +106,6 @@ console.log("sensor",sensor);
     sensorinstance.post(`/rpc/lastsensordata`, sensor )
   .then(res => {
     let sensor_response = res.data;
-    console.log("sensor_response",sensor_response);
     this.setState({ ChipID: sensor_response[0].p_result.ChipID });
     this.setState({ rms_lf: sensor_response[0].p_result.RMS_LF });
     this.setState({ dir_lf: sensor_response[0].p_result.DIR_LF });
@@ -128,6 +123,7 @@ console.log("sensor",sensor);
     const sensor_click = this.state.sensor_click;
         
     {
+
     return <div>
             <div className="dashboard">
             <div className="dashboard-header">

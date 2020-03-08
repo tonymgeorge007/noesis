@@ -24,20 +24,19 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 59, 90, 81, 56, 55, 50]
+      data: [65, 59, 90, 81, 56, 55, 50],
     }
   ]
 };
 
-class MyChart extends Component{
+class MylistChart extends Component{
 
   render() {
     return (
       <div>
-        {/* <h2>Line Example</h2> */}
         <Line data={data} />
       </div>
     );
   }
 };
-export default MyChart;
+export default MylistChart;

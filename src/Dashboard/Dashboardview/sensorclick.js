@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './sensorclick.css';
 import axios from 'axios';
 import moment from 'moment';
-// import { MyChart } from './sensorclickgraph';
+import MyChart  from './sensorclickgraph';
 
 class SensorClick extends Component {
     constructor(props) {
@@ -39,7 +39,7 @@ class SensorClick extends Component {
 
 
                         <div className="col-md-8">
-                {/* <MyChart /> */}
+                <MyChart />
                     </div>
 
 

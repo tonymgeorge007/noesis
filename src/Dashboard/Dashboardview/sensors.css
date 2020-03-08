@@ -22,3 +22,9 @@ padding-left: 42px;
     padding-right: 35px;
     width: auto;
 }
+.sensor_main_table .chartjs-size-monitor canvas {
+    height: 50px !important;
+}
+.sensor_main_table{
+
+}
