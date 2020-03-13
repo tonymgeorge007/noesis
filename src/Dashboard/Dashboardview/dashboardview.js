@@ -6,16 +6,23 @@ import axios from 'axios';
 import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
 import user from '../../Images/user.png';
-import SimpleExample from './mapviewleaf';
 import Heatmap from './heatmap';
 import Sensors from './sensors';
 import SensorClick from './sensorclick';
+import {
+  Circle,
+  FeatureGroup,
+  LayerGroup,
+  Map,
+  Popup,
+  TileLayer,
+} from 'react-leaflet'
 
 
 class Dashboardview extends Component {
   state = {
     show: false,
-    sensor_click: true,
+    sensor_click: false,
     ChipID:'',
     rms_lf:'',
     dir_lf:'',
@@ -28,6 +35,11 @@ class Dashboardview extends Component {
     status:'',
     recieveddate:'',
     sensorliststate:[],
+    lat: '',
+    lng: '',
+    zoom: 18,
+    token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw',
+    plotliststate:[],
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw'
   }
 
@@ -35,6 +47,7 @@ class Dashboardview extends Component {
   constructor(props) {
     super(props);
     this.sumbitSensor = this.sumbitSensor.bind(this);
+    this.clickedSensor = this.clickedSensor.bind(this);
   } 
 
 
@@ -53,11 +66,36 @@ class Dashboardview extends Component {
       alert("Login use a valid credential for view Dashboard");
       window.location.href = '/';
     }
-
+this.plotmap();
 this.listSensor();
 
   }
+  clickedSensor(chipidentifier){
 
+    this.setState({ sensor_click: true });
+
+    }
+plotmap() {
+    const plotlist = {
+      p_projectid:123
+    };
+
+    const plotlistinstance = axios.create({
+      baseURL: 'http://158.101.193.151:3000',
+      headers: {
+        Authorization: "Bearer " + this.state.token,
+        "Content-Type": "application/json"
+      }
+    });
+
+    plotlistinstance.post(`/rpc/noiselevels`, plotlist )
+  .then(res => {
+    let plotlist_response = res.data;
+    this.setState({ plotliststate: plotlist_response[0].p_result});
+    this.setState({ lat: plotlist_response[0].p_result[0].Position.Latitude});
+    this.setState({ lng: plotlist_response[0].p_result[0].Position.Longitude});
+  })
+}
   listSensor() {
 
     const sensorlist = {
@@ -121,7 +159,7 @@ this.listSensor();
  
   render() {
     const sensor_click = this.state.sensor_click;
-        
+    const position = [this.state.lat, this.state.lng]
     {
 
     return <div>
@@ -141,22 +179,35 @@ this.listSensor();
 </Dropdown>
             </div>
             <div className="dashboard-map padding_left_20">
-            <SimpleExample />
+
+        <Map center={position} zoom={this.state.zoom}>
+        <TileLayer
+          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <LayerGroup>
+        </LayerGroup>
+
+        {this.state.plotliststate.map((plotliststate, index) => (
+          <FeatureGroup onClick={event => this.clickedSensor(plotliststate.DeviceID)}  color= {plotliststate.Status == "Online" ? "green" : "red"}>
+          <Circle center={[plotliststate.Position.Latitude, plotliststate.Position.Longitude]} radius={4} />
+          </FeatureGroup>
+            ))}
+        </Map>
 
             </div>
             <div className="dashboard-middile row">
 
-
-            {/* <SensorClick /> */}
-
+          
+          {sensor_click == true ? <SensorClick /> : 
             <div className="col-md-5">
-
-
-
 
             <div className="row">
             <h3>Tabular data</h3>
 </div>
+
+
+
 <div className="row table_width_height">
             <Table striped bordered hover className=" table_view_position scrollbar table-zindex" >
   <thead>
@@ -191,11 +242,8 @@ this.listSensor();
     <p className="modal_item">DIR LF :  {this.state.dir_lf}</p>
     <p className="modal_item">RMS Peak : {this.state.RMS_peak}</p>
     <p className="modal_item">Sharpness : {this.state.sharpness}</p>
-
-
-
-    {/* <p className="modal_item">Longitude : {this.state.longitude}</p> */}
-    {/* <p className="modal_item">Latitude : {this.state.latitude}</p> */}
+    <p className="modal_item">Longitude : {this.state.longitude}</p>
+    <p className="modal_item">Latitude : {this.state.latitude}</p>
 
 
 
@@ -207,10 +255,10 @@ this.listSensor();
 </Modal>
 
 
-</div>
+  </div>
 
-            </div>
-
+  </div>
+}
             <div className="col-md-7 middile_second datepicker_dashboard">
 <div className="row">
             <h3>Time and date range</h3>
