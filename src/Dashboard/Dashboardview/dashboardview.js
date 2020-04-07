@@ -32,6 +32,7 @@ class Dashboardview extends Component {
     sharpness:'',
     device_id:'',
     ChipIDnew:'',
+    chipidentifier:'',
     status:'',
     recieveddate:'',
     sensorliststate:[],
@@ -39,8 +40,7 @@ class Dashboardview extends Component {
     lng: '',
     zoom: 18,
     token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw',
-    plotliststate:[],
-    token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoibm9lc2lzX3dlYiJ9.2oQCiI1OR8q_nSGEudKSt5X3KgJ0QRi_MVsVk0-7uyw'
+    plotliststate:[]
   }
 
 
@@ -72,6 +72,7 @@ this.listSensor();
   }
   clickedSensor(chipidentifier){
 
+    this.setState({ chipidentifier: chipidentifier });
     this.setState({ sensor_click: true });
 
     }
@@ -159,7 +160,10 @@ plotmap() {
  
   render() {
     const sensor_click = this.state.sensor_click;
-    const position = [this.state.lat, this.state.lng]
+    const chipidentifier = this.state.chipidentifier;
+    const sensor_data = this.state.plotliststate;
+    const position = [this.state.lat, this.state.lng];
+    const graph_data = [65, 59, 90, 81, 56, 55, 50];
     {
 
     return <div>
@@ -198,8 +202,7 @@ plotmap() {
             </div>
             <div className="dashboard-middile row">
 
-          
-          {sensor_click == true ? <SensorClick /> : 
+          {sensor_click == true ? <SensorClick sensor_data={sensor_data} chipidentifier={chipidentifier} graph_data={graph_data} /> : 
             <div className="col-md-5">
 
             <div className="row">

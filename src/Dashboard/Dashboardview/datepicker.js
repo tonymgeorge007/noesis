@@ -19,7 +19,6 @@ class Mydatepicker extends Component {
           onSelect={this.onSelect}
           value={this.state.dates}
           numberOfCalendars={numberOfCalendars}
-          {...console.log("number calenders", numberOfCalendars)}
         />
       </div>
     )

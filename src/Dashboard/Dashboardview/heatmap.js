@@ -63,8 +63,6 @@ class Heatmap extends Component {
 
 
 
-
-
 <div className="row">
 
  <div className="col-md-7">
@@ -75,9 +73,6 @@ class Heatmap extends Component {
             <Mydatepicker />
 </div>
             </div>
-
-
-
 
 
 
@@ -93,24 +88,8 @@ class Heatmap extends Component {
 <div className="col-md-6 padding_left_0"><button type="button" className="heatmap-button">SAVE PRESENT</button></div>
             </div>
             </div>
-
-
-
-</div>
-
-
-
-
-
             </div>
-
-
-
-
-           
-
-
-
+            </div>
 
         </div>
             <div className="row footer">
