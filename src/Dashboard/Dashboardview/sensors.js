@@ -7,6 +7,7 @@ import { Modal, Dropdown } from 'react-bootstrap';
 import moment from 'moment';
 import user from '../../Images/user.png';
 import SensorLeaf from './sensorleafmap';
+import Footer from './footer';
 
 
 class Sensors extends Component {
@@ -103,7 +104,7 @@ class Sensors extends Component {
     <td>{sensortableliststate.Address.Address}</td>
     <td>{sensortableliststate.Address.Location}</td>
     <td>{sensortableliststate.Status}</td>
-    <td>{sensortableliststate.AvgLevel}</td>
+    <td>{sensortableliststate.AvgLevel == null ? "N/A" : sensortableliststate.AvgLevel}</td>
     <td>
     {/* <MylistChart /> */}
     </td>
@@ -112,41 +113,12 @@ class Sensors extends Component {
     </tr>
 ))}
 
-
-
-
   </tbody>
 </Table>
-
-
-
-
 </div>
 
-
-
 </div>
-            <div className="row footer">
-            
-            <div className="col-md-4">
-            <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
-            <p>Privacy Statement</p>
-            </a>
-            </div>
-            
-            <div className="col-md-4">
-            <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
-            <p>Terms & Conditions</p>
-            </a>
-            </div>
-
-            <div className="col-md-4">
-            <a href="https://noesis.network/">
-            <p>About Us</p>
-            </a>
-            </div>
-            
-            </div>
+           <Footer />
 
     </div>
 

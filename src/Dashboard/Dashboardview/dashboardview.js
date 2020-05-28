@@ -9,6 +9,7 @@ import user from '../../Images/user.png';
 import Heatmap from './heatmap';
 import Sensors from './sensors';
 import SensorClick from './sensorclick';
+import Footer from './footer';
 import {
   Circle,
   FeatureGroup,
@@ -233,8 +234,6 @@ plotmap() {
 
     ))}
 
-
-
   </tbody>
 </Table>
 
@@ -248,11 +247,8 @@ plotmap() {
     <p className="modal_item">Longitude : {this.state.longitude}</p>
     <p className="modal_item">Latitude : {this.state.latitude}</p>
 
-
-
     <p className="modal_item">Received Time : {moment(this.state.recieveddate).format("YYYY-MM-DD HH:mm:ss")}</p>
          
-
 <button type="button"  className="modal_close" onClick={this.hideModal}>CLOSE</button>
        
 </Modal>
@@ -269,33 +265,8 @@ plotmap() {
             <Mydatepicker />
             </div>
             </div>
-
             </div>
-
-
-            <div className="row footer">
-            
-            <div className="col-md-4">
-            <a href="http://158.101.193.151/Documents/Noesis cookie and privacy statement V2020.1.pdf">
-            <p>Privacy Statement</p>
-            </a>
-            </div>
-            
-            <div className="col-md-4">
-            <a href="http://158.101.193.151/Documents/Noesis terms and conditions.pdf">
-            <p>Terms & Conditions</p>
-            </a>
-            </div>
-
-            <div className="col-md-4">
-            <a href="https://noesis.network/">
-            <p>About Us</p>
-            </a>
-            </div>
-            
-            </div>
-
-
+            <Footer />
     </div>
   }
   }

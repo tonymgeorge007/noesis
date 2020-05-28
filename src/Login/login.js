@@ -41,7 +41,7 @@ console.log("user",user);
       
     }
     else{
-      alert(login_response[0].p_result.error_text)
+      alert("Invalid usename or password.")
     }
   })
 
