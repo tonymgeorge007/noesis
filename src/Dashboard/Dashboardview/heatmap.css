@@ -1,0 +1,62 @@
+.dummy-accordian label{
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+.accordion__panel {
+    height: 200px;
+}
+.dummy-accordian label input{
+    margin-right: 10px;
+}
+.heatmap-button{
+    background-color: #6AC7F4;
+    border: 0px;
+    width: 170px;
+    height: 49px;
+    color: white;
+    font-size: 1rem;
+}
+.input-range {
+    width: 90% !important;
+    padding-top: 100px;
+    margin-top: 90px;
+}
+.input-range__label--min {
+    left: 0;
+    top: 60px;
+}
+.input-range__label--max {
+    right: 0;
+    top: 60px;
+}
+.input-range__track--background {
+    height: 10px !important;
+}
+.input-range__track{
+    height: 10px !important;
+}
+.input-range__track--active{
+    background-color: #6AC7F4 !important;
+}
+.input-range__slider {
+    position: relative !important;
+    top: -2px !important;
+    background-color: white !important;
+}
+.input-range__label-container{
+    font-family: barlow-medium !important;
+}
+.datepicker-heatmap .DateRangePicker__Month{
+    width: 195px !important;
+}
+.accordion__item{
+    font-family: barlow-medium !important;
+}
+.accordian_h3 h3{
+    padding-left: 0px;
+}
+.datepicker-heatmap-position{
+    position: relative;
+    left: -30px;
+}

@@ -1,0 +1,30 @@
+.sensormappadding{
+    padding-left: 40px;
+    padding-right: 30px;
+}
+.sensor_table_height{
+    height: 220px;
+}
+.sensors h3 {
+padding-left: 42px;
+}
+.sensor_main_table{
+    position: relative;
+    /* left: 30px; */
+    height: 220px;
+    display: block;
+    overflow-y: scroll;
+}
+
+.sensor_main_table thead th {
+    border-bottom-width: 2px;
+    padding-left: 35px;
+    padding-right: 35px;
+    width: auto;
+}
+.sensor_main_table .chartjs-size-monitor canvas {
+    height: 50px !important;
+}
+.sensor_main_table{
+
+}

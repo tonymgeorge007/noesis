@@ -1,0 +1,74 @@
+.loginscreen{
+    background-image: url(../Images/map.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: repeat;
+    height: 100vh;
+}
+
+.Login{
+    background-color: #ffffff55;
+    margin: auto;
+    width: 500px;
+    position: relative;
+    top:100px;
+    border-radius: 20px;
+}
+.loginform{
+    margin: auto;
+    position: relative;
+    top: 40%;
+    width: 400px;
+    background-color: #d7d2cc;
+    border-radius: 15px;
+    height: 150px;
+}
+.floatleft{
+    float: left;
+}
+.paddingtop20{
+    padding-top: 20px;
+}
+.loginbutton{
+    width: 100px;
+    margin: auto;
+    position: relative;
+    top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .loginform{
+        top: 35%;
+        height: 220px;
+        border-radius: 0px;
+    }
+    .floatleft{
+        float: none;
+    
+    }
+    .loginbutton{
+        margin-top: 10px;
+    }
+    .Login{
+    background-color: white;
+    margin: auto;
+    width: 100%;
+    height: 280px;
+    border-radius: 0px;
+    }
+  }
+
+
+  @media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+.secondfield{
+    margin: 15px 0px 15px 0px;
+}

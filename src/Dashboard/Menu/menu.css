@@ -1,0 +1,79 @@
+.menu{
+    background-color: #475890;
+    height: 100%;
+    font-family: barlow-medium;
+}
+.menu-heading h3{
+    font-size: 1.25rem;
+    color:rgba(255, 255, 255, .3);
+    padding: 28px 0px 28px 0px;
+    letter-spacing: .150rem;
+}
+.menu-heading {
+    background-color:#3F4E80;
+    height: 80px;
+}
+.menu-icon{
+float: left;
+width: 18px;
+height: 18px;
+margin-top: 15px;
+}
+.menu-list{
+float: left;
+padding-left: 13px;
+font-size: 1rem;
+top: -4px;
+position: relative;
+color: white;
+letter-spacing: .1rem;
+padding-top: 15px;
+margin-bottom: 5px;
+}
+
+.menu-list-style{
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0px;
+}
+.menu-span{
+    position: relative;
+    left: 0px;
+}
+.menu-items{
+    background-color: #475890;
+}
+.menu-bottom{
+    color: white;
+    font-size: 1.3125rem;
+    position: relative;
+    top: 150px;
+}
+.menu-list-style li{
+    cursor: pointer;
+    padding-left: 32px;
+}
+.menu-list-style li:hover{
+    background-color: #3F4E80;
+}
+.logo-icon-top{
+    height: 40%;
+}
+.logo-icon{
+    width:92px;
+    height:110px;
+    position: absolute;
+    top: 75%;
+    left: 33%;
+}
+.footer p {
+    font-size: 14px;
+    text-decoration: underline;
+    font-family:  barlow-medium;
+    padding-top: 30px;
+    margin-bottom: 5px;
+    color: black;
+}
+.margin_right_0{
+    margin-right: 0px;
+}

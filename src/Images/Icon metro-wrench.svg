@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Icon_metro-wrench" data-name="Icon metro-wrench" class="cls-1" d="M20.2,16.3,12.1,9.366a5.065,5.065,0,0,0-5.942-7.22L9.088,5.07a1.128,1.128,0,0,1,0,1.591L7.3,8.445a1.128,1.128,0,0,1-1.591,0L2.788,5.52a5.064,5.064,0,0,0,7.22,5.942l6.939,8.1a1.028,1.028,0,0,0,1.528.059l1.784-1.784A1.028,1.028,0,0,0,20.2,16.3Z" transform="translate(-2.571 -1.928)"/>
+</svg>
